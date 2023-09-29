@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Author File</title>
+ </head>
+<body>
+
+<h2>Author entry Amogh Reddy Nalla</h2>
+
+<form>
+    <label for="form1_age">The hidden author name: </label>
+    <input type ="password" id="val1" name="form1_age"><br>
+
+    <label for="form1_nick">Guess the author:</label>
+    <input type ="text" id="val2" name="form1_nick" autofocus><br>
+
+    <input type="button" onclick="checkAuthor()" value="Get values from form">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+var good=0;
+var oops=0;
+function checkAuthor (){
+    console.log("Getting form values")
+   var var1 = document.getElementById("val1").value
+    var var2 = document.getElementById("val2").value
+    
+    out = document.getElementById("result")
+    if(var1==var2){
+        good++;
+        alert("You got it right");
+        
+    } else {
+        oops++;
+        out.innerHTML = "Values were not confirmed"
+        alert("sorry");
+    }
+    out.innerHTML ='right:'+good+',wrong:'+oops;
+}
+</script>
+
+</body>
+</html> 
