@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tips html page</title>
+    </head>
+ 
+<body>
+
+<h2>Amogh Reddy Nalla shows tip amounts</h2>
+
+<form>
+    <label for="amt">Enter base amount </label>
+    <input type ="number" id="amt" name="amt" value="50"> <br>
+
+    <label for="perc">Enter the tip percent</label>
+    <input type ="number" id="perc" name="perc" value="15"> <br>
+
+    <input type="button" onclick="tips()" value="Show tip">
+    <p id="para"></p>
+
+    <input type="radio" id="sum" name="rb" value="sum" onclick="chooseOp()" >
+    <label for="rg1_red">sum</label></br>
+    <input type="radio" id="difference" name="rb" value="difference" onclick="chooseOp()" >
+    <label for="rg1_red">diff</label></br>
+    <input type="radio" id="product" name="rb" value="product" onclick="chooseOp()">
+    <label for="rg1_blue">mult</label></br>
+    <p id="result"></p>
+</form>
+        
+
+<script> 
+
+function tips (){
+
+    var amt=document.getElementById("amt").value;
+    amt=parseInt(amt);
+    var tip=document.getElementById("perc").value;
+    tip=parseInt(tip);
+    var myOutput=" ";
+    let sum=0;
+    for(let i=0;i<5;i++){
+       sum =amt*(tip/100);
+       sum = sum.toFixed(1);
+        myOutput+=tip+'% is '+sum+';'+' ';
+        tip+=4;
+    }
+   document.getElementById("para").innerHTML='Tips are :'+myOutput;
+}
+
+function chooseOp(){
+
+    let num1=document.getElementById("amt").value;
+    num1=parseInt(num1);
+    let num2=document.getElementById("perc").value;
+    num2=parseInt(num2);
+    let getSelectedValue=document.querySelector('input[name="rb"]:checked');
+    
+    if(getSelectedValue.value=="sum")
+    {
+        let c=num1+num2;
+        document.getElementById("result").innerHTML='Sum of '+num1+' and '+num2+' is '+c;
+    }
+    else if(getSelectedValue.value=="difference")
+    {
+        let c=num1-num2;
+        document.getElementById("result").innerHTML='Difference of '+num1+' and '+num2+' is '+c;
+    }
+    else
+    {
+        let c=num1*num2;
+        document.getElementById("result").innerHTML='Product of '+num1+' and '+num2+' is '+c;
+    }
+}
+</script>
+
+</body>
+</html> 
