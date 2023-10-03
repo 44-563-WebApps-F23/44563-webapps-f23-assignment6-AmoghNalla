@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Cruise File</title></head>
+ 
+<body>
+
+<h2>Amogh Reddy Nalla goes on a cruise</h2>
+
+<form>
+    <input type="checkbox" id="cb1_cheese" name="topping1" value="True">
+    <label for="cb1_cheese">Shares Cabin</label></br>
+    <input type="checkbox" id="cb1_olive" name="topping2" value="True">
+    <label for="cb1_olive">Breakfast</label></br>
+    <input type="checkbox" id="cb1_onion" name="topping3" value="False">
+    <label for="cb1_onion">Pool Pass</label></br>
+    <input type="button" value="Select a Cruise" onclick="selectCruise()"><br><br>
+    <label for="days">Enter the number of days</label>
+    <input type="text" id="days" name="days" value="days"><br>
+    <label for="price">Enter price</label>
+    <input type="text" id="price" name="price"><br>
+    <input type="button" value="Update the cruise" onclick="updateCruise()">
+
+</form>
+
+
+<p id="result"></p>
+<p id="res"></p>
+
+<script> 
+
+my_cruise={};
+function selectCruise (){
+    console.log("Getting form values")
+    my_cruise={};
+    cheese=document.getElementById("cb1_cheese").checked;
+    olive=document.getElementById("cb1_olive").checked;
+    onion=document.getElementById("cb1_onion").checked;
+    if(cheese){
+        my_cruise["shared"]=true
+    }
+    else
+    my_cruise["shared"]=false
+
+    if(olive){
+        my_cruise["breakfast"]=true
+    }
+    else
+    my_cruise["breakfast"]=false
+
+    if(onion){
+        my_cruise["pool"]=true
+    }
+    else
+    my_cruise["pool"]=false
+
+
+    let x=JSON.stringify(my_cruise)
+    document.getElementById("result").innerHTML=x;}
+
+    function updateCruise(){
+        let days=document.getElementById("days").value
+        let price=document.getElementById("price").value
+        my_cruise[days]=price
+        document.getElementById("res").innerHTML=JSON.stringify(my_cruise)
+    }
+</script>
+
+</body>
+</html> 
