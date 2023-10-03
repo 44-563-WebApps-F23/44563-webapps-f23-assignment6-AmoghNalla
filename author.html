@@ -8,10 +8,10 @@
 <h2>Author entry Amogh Reddy Nalla</h2>
 
 <form>
-    <label for="form1_age">The hidden author name: </label>
+    <label for="val1">The hidden author name: </label>
     <input type ="password" id="val1" name="form1_age" value="Dickens"><br>
 
-    <label for="form1_nick">Guess the author:</label>
+    <label for="val2">Guess the author:</label>
     <input type ="text" id="val2" name="form1_nick" ><br>
 
     <input type="button" onclick="checkAuthor()" value="Get values from form">
@@ -35,12 +35,28 @@ function checkAuthor (){
         
     } else {
         oops++;
-        out.innerHTML = "Values were not confirmed"
         alert("sorry");
     }
     out.innerHTML ='right:'+good+',wrong:'+oops;
 }
-</script>
 
+    var useImage=1;
+    function selectImage(){
+        switch(useImage){
+            case 1: document.getElementById("image").src="armoor.jpg";
+                    useImage++;
+                    break;
+            case 2: document.getElementById("image").src="adilabad.jpg";
+                    useImage++;
+                    break;
+            case 3: document.getElementById("image").src="nizamabad.jpg";
+                    useImage++;
+                    break;
+        }
+    }
+</script>
+<div>
+    <img src="nizamabad.jpg" id="image" alt="A pic of Nizamabad City" width="100px" height="100px" onClick="selectImage()">
+</div>
 </body>
 </html> 
