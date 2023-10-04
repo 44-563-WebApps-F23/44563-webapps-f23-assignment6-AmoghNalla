@@ -5,7 +5,7 @@
  </head>
 <body>
 
-<h2>Author entry Amogh Reddy Nalla</h2>
+<h2 style="color: blue;">Author entry Amogh Reddy Nalla</h2>
 
 <form>
     <label for="val1">The hidden author name: </label>
@@ -14,11 +14,12 @@
     <label for="val2">Guess the author:</label>
     <input type ="text" id="val2" name="form1_nick" ><br>
 
-    <input type="button" onclick="checkAuthor()" value="Get values from form">
+    <input type="button" class="btn-primary" onclick="checkAuthor()" value="Check the Guess" style="color:red;">
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result"></p>
+<div id="abc"></div>
 
 <script> 
 var good=0;
@@ -35,9 +36,18 @@ function checkAuthor (){
         
     } else {
         oops++;
-        alert("sorry");
+        out.innerHTML='right:'+good+',wrong:'+oops
+        if(oops<7)
+        {
+            alert("sorry")
+        }
+        else{
+            document.getElementById("abc").onclick=checkOops()
+            document.getElementById("abc").disabled=true;
+      }
+        
     }
-    out.innerHTML ='right:'+good+',wrong:'+oops;
+    
 }
 
     var useImage=1;
@@ -53,6 +63,11 @@ function checkAuthor (){
                     useImage++;
                     break;
         }
+    }
+
+    function checkOops(){
+        alert("Sorry, ran out of guesses")
+        
     }
 </script>
 <div>
