@@ -38,23 +38,23 @@ function tips (){
     tip=parseInt(tip);
     var myOutput=" ";
     let sum=0;
-    for(let i=0;i<5;i++){
-       sum =amt*(tip/100);
-       sum = sum.toFixed(1);
+    for(let i=0;i<5;i++)
+    {
+        sum =amt*(tip/100);
+        sum = sum.toFixed(1);
         myOutput+=tip+'% is '+sum+';'+' ';
         tip+=4;
     }
    document.getElementById("para").innerHTML='Tips are :'+myOutput;
+
 }
 
 function chooseOp(){
-
     let num1=document.getElementById("amt").value;
     num1=parseInt(num1);
     let num2=document.getElementById("perc").value;
     num2=parseInt(num2);
     let getSelectedValue=document.querySelector('input[name="rb"]:checked');
-    
     if(getSelectedValue.value=="sum")
     {
         let c=num1+num2;
