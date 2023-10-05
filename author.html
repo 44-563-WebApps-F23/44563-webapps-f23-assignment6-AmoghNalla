@@ -5,7 +5,7 @@
  </head>
 <body>
 
-<h2 style="color: blue;">Author entry Amogh Reddy Nalla</h2>
+<h2>Author entry Amogh Reddy Nalla</h2>
 
 <form>
     <label for="val1">The hidden author name: </label>
@@ -14,7 +14,7 @@
     <label for="val2">Guess the author:</label>
     <input type ="text" id="val2" name="form1_nick" ><br>
 
-    <input type="button" class="btn-primary" onclick="checkAuthor()" value="Check the Guess" style="color:red;">
+    <input type="button" class="btn-primary" onclick="checkAuthor()" value="Check the Guess" >
 </form>
 
 
@@ -32,9 +32,10 @@ function checkAuthor (){
     out = document.getElementById("result")
     if(var1==var2){
         good++;
+        out.innerHTML='right:'+good+',wrong:'+oops
         alert("You got it right");
-        
-    } else {
+        }
+         else {
         oops++;
         out.innerHTML='right:'+good+',wrong:'+oops
         if(oops<7)
