@@ -3,6 +3,13 @@
  <head>
     <title>Author File</title>
  </head>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+ integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+ integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
 <body>
 
 <h2>Author entry Amogh Reddy Nalla</h2>
@@ -14,12 +21,11 @@
     <label for="val2">Guess the author:</label>
     <input type ="text" id="val2" name="form1_nick" ><br>
 
-    <input type="button" onclick="checkAuthor()" value="Check the Guess" >
+    <input type="button" id="abc" onclick="checkAuthor()" value="Check the Guess" class="btn btn-success">
 </form>
 
 
 <p id="result"></p>
-<div id="abc"></div>
 
 <script> 
 var good=0;
@@ -45,6 +51,7 @@ function checkAuthor (){
         else{
             document.getElementById("abc").onclick=checkOops()
             document.getElementById("abc").disabled=true;
+            
       }
         
     }
@@ -68,6 +75,7 @@ function checkAuthor (){
 
     function checkOops(){
         alert("Sorry, ran out of guesses")
+        document.getElementById("abc").disabled=true;
         
     }
 </script>
